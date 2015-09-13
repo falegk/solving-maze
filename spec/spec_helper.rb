@@ -1,0 +1,5 @@
+require 'rspec'
+require_relative '../lib/wall'
+require_relative '../lib/point'
+require_relative '../lib/world'
+require_relative '../lib/maze_game'
