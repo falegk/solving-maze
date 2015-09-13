@@ -1,21 +1,19 @@
 module ValidFile
   extend ValidFile
 
-  @basic = %w(start goal coordinates wall)
-
   def valid_file(data)
-    if data['start'] && data['goal'] && data['coordinates']
+    if data['start']['x'] && data['start']['y'] && data['goal']['x'] && data['goal']['y'] && data['dimensions']['x'] && data['dimensions']['y']
       true
     else
-      p 'There is no start point here. How to begin?' unless data['start']
+      puts 'There is no start point here. How to begin?' unless data['start']['x'] && data['start']['y']
 
-      p 'There is no exit here. Looks like a prison...' unless data['goal']
+      puts 'There is no exit here. Looks like a prison...' unless data['goal']['x'] && data['goal']['y']
 
-      p 'Please, give me dimensions of the maze' unless data['coordinates']
+      puts 'Please, give me dimensions of the maze' unless data['dimensions']['x'] && data['dimensions']['y']
 
-      p 'Looks here to make a correct json file: https://github.com/falegk/solving-maze'
+      puts 'Looks here to make a correct json file: https://github.com/falegk/solving-maze'
+
     end
-
   end
 
 end

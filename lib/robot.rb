@@ -49,11 +49,12 @@ module Robot
   def print_path
     if @exit
       puts '============= Maze Solving ==================='
+      puts "The start is #{@path.first}"
       puts "The goal is #{@path.last}"
       puts "The path is: #{@path}"
       puts '=============================================='
     else
-      puts 'I don\'t solve the problem :('
+      puts 'I don\'t find the exit to your maze :('
     end
 
   end
