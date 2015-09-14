@@ -30,6 +30,9 @@ class MazeGame
     unless @start_p.is_valid_point? && @goal_p.is_valid_point?
       abort "Start or Goal point is invalid\nPlease pass values greater than zero"
     end
+    unless @start_p.is_point_in_world?(dimensions_x,dimensions_y) && @goal_p.is_point_in_world?(dimensions_x,dimensions_y)
+      abort "Start or Goal point is out of the world\n"
+    end
 
     # initialize world
     @world = create_world(@start_p,@goal_p,dimensions_x,dimensions_y, @wall)
